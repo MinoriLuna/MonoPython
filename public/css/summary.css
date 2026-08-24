@@ -1,0 +1,79 @@
+body {
+    background-image: url("/img/summary.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+/* Container Styling */
+.container {
+    margin: 60px auto;
+    text-align: center;
+    max-width: 450px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Heading Styling */
+h2 {
+    padding: 10px;
+    color: #e74c3c;
+}
+
+p{
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+/* Leaderboard */
+.leaderboard {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.winner {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fdd835;
+}
+
+/* Player List */
+.players {
+    list-style: none;
+    padding: 0;
+}
+
+.players li {
+    font-size: 16px;
+    margin: 5px 0;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Back to Menu Button */
+button {
+    margin-top: 15px;
+    padding: 15px 20px;
+    border: none;
+    background: #d5a00e;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d5a00e;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 30px;
+    }
+}

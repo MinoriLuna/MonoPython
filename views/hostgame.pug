@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/host.css")
+    h2 Welcome, #{username}! You are hosting a game.
+
+    p Your Game ID: **#{gameID}** 
+
+    p Scan this QR Code to join:
+    if qrCodeData
+        img(src=qrCodeData, alt="Join Game QR Code", class="qr-code")
+
+    br
+
+    a(href="/start-game", class="btn start-game-btn") Begin Game
+
+    p When the host starts, all players will be redirected automatically.
+
+    script(src="/socket.io/socket.io.js")
+    script.
+        var socket = io();
+        socket.emit('joinGame', !{JSON.stringify(gameID)});
+
+        socket.on('gameStarted', function(data) {
+            window.location.href = "/gameplay?gameID=" + data.gameID;
+        });

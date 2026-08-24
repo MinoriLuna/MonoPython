@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/auth.css")
+    .auth-container
+        h1 Register
+        form(action="/register" method="post")
+            input(type="text" name="username" placeholder="Choose a Username" required)
+            input(type="password" name="password" placeholder="Enter Password" required)
+            p Your password must be between 4-10 characters long.
+            button(type="submit") Register
+        a(href="/login") Already have an account? Log In

@@ -1,0 +1,62 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for game elements */
+.lobby-container {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 60%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Game ID text */
+.lobby-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Players List */
+.lobby-container h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.lobby-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lobby-container ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #fdd835; /* Golden color for players */
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lobby-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .lobby-container h2 {
+        font-size: 20px;
+    }
+
+    .lobby-container h3 {
+        font-size: 18px;
+    }
+
+    .lobby-container ul li {
+        font-size: 16px;
+    }
+}

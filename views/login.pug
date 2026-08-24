@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/auth.css")
+    .auth-container
+        h1 Login
+        form(action="/login" method="post")
+            input(type="text" name="username" placeholder="Enter Username" required)
+            input(type="password" name="password" placeholder="Enter Password" required)
+            button(type="submit") Login
+        a(href="/register") Don't have an account? Register

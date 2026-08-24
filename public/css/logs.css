@@ -1,0 +1,85 @@
+body {
+    background-image: url("/img/logs.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+/* Container for logs */
+.logs-container {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    max-width: 60%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Logs Header */
+.logs-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Back to Lobby Link */
+.logs-container a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Logs List */
+.logs-container ul {
+    list-style-type: disc; /* Change to bullet points */
+    padding-left: 20px; /* Add padding to align bullets */
+}
+
+.logs-container li {
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.btn.back-btn {
+    background: #d5a00e;
+}
+
+.btn.back-btn:hover {
+    background: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logs-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .logs-container h2 {
+        font-size: 20px;
+    }
+
+    .logs-container li {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .logs-container ul {
+        list-style-type: disc; 
+        padding-left: 20px;
+    }
+    
+    .logs-container li {
+        font-size: 16px;
+        margin: 8px 0;
+        padding: 6px;
+        border-radius: 8px;
+    }
+}

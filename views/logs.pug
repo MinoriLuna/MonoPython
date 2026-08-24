@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/logs.css")
+    .logs-container
+        h2 Game Logs
+        ul
+            each log in logs
+                li
+                    span.timestamp #{log.Timestamp}:
+                    span.action #{log.Action}
+        a(href='/ongoing-lobby', class="btn back-btn") Back to Lobby

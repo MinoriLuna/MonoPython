@@ -1,0 +1,77 @@
+  /* Navigation Styling */
+  nav ul {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s ease, background 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f5a623;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  /* Main Content Styling */
+  main {
+    flex: 1;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  /* Host Game Page Styling */
+  h2 {
+    color: #f5a623;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+  
+  .start-game-btn {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background-color: #f5a623;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+  }

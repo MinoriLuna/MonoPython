@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        title Monopython
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css")
+        link(rel="stylesheet", href="/css/modal.css")   
+        link(rel="stylesheet", href="/css/layout.css")
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js")
+        script(src="/js/modal.js")
+        script(src="/js/responsive.js")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    body
+        header
+            div#menu-icon ☰
+            h1 Monopython
+            nav
+                ul#menulist
+                    if loggedin
+                        li Welcome, #{username}
+                        li: a(href="/") Home
+                        li: a(href="/profile") Profile
+                        li: a(href="/logout") Log Out
+                    else
+                        li: a(href="/") Home
+                        li: a(href="/login") Log In
+                        li: a(href="/register") Register
+
+        main
+            block content
+
+        div(id="notificationModal" class="modal")
+            h2#notificationTitle Notification
+            p#notificationMessage
+            a(href="#" rel="modal:close") Close
+
+        footer
+            p Monopython &copy; 2024/2025

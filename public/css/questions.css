@@ -1,0 +1,131 @@
+/* Container */
+.container {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+/* Heading */
+h2 {
+    color: #ffcc00;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Property Info */
+#property-info p {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 10px 10px;
+}
+
+/* Select Dropdown */
+select {
+    font-weight: bold;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Question Area */
+#question-area p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 15px 0;
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Form Container */
+.form-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Buttons Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Added to allow wrapping */
+}
+
+/* Submit Button */
+button {
+    display: inline-block;
+    padding: 10px;
+    background-color: #faba24;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%; 
+    max-width: 200px; 
+    text-align: center;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: #ec971f;
+}
+
+/* Back to Lobby Button */
+.back-btn {
+    display: inline-block;
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%; 
+    max-width: 200px; 
+    text-align: center;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #c9302c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 100%;
+    }
+
+    button, .back-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/lobby.css")
+    .lobby-container
+        h2 Game ID: #{gameID} - The game has started!
+        
+        .player-box
+            h3 Players:
+            ul
+                each player in players
+                    ul.player-name #{player.Name} - Balance: $#{player.Balance} - ID: #{player.PlayerID}
+        
+        p.game-status The game is now in progress. Roll the dice to start playing!
+
+        .dice-container
+            p Dice Result: 
+            span#dice-result - 
+            button#roll-dice-btn.btn.roll-dice-btn 🎲 Roll Dice
+            
+        // New button to scan QR code
+        a(href="/qrcodescanner", class="btn scan-qr-btn") 📷 Scan QR Code
+        a(href='/game-logs', class="btn view-logs-btn") 📜 View Game Logs
+        br
+        a(href="/end-game?gameID=#{gameID}", class="btn end-game-btn") ❌ End Game
+
+    script(src="/js/dice.js")
+    script(src="/socket.io/socket.io.js")
+    script.
+        var socket = io();
+        socket.emit('joinGame', "#{gameID}");
+
+        socket.on('gameEnded', function(data) {
+            alert("The game has ended. Redirecting to the main menu.");
+            window.location.href = "/";
+        });

@@ -1,0 +1,178 @@
+body {
+    background-image: url("/img/lobby.jpg");
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+/* Container for game elements */
+.lobby-container {
+    margin-top: 20vh;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 25%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Game ID text */
+.lobby-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.lobby-container p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Player Box */
+.lobby-container .player-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Player Name Styling */
+.lobby-container .player-name {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fdd835; /* Golden color for players */
+}
+
+/* Game Status Text */
+.lobby-container .game-status {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Dice Result Styling */
+.lobby-container .dice-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lobby-container #dice-result {
+    font-size: 24px;
+    padding: 20px;
+    font-weight: bold;
+    color: #f5a623;
+    margin-right: 10px;
+}
+
+/* Buttons Styling */
+.lobby-container .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 10px auto; /* Center the buttons */
+}
+
+/* Start Game Button */
+.lobby-container .start-game-btn {
+    background-color: #f5a623;
+}
+
+.lobby-container .start-game-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Roll Dice Button */
+.lobby-container .roll-dice-btn {
+    background: #ff9800;
+}
+
+.lobby-container .roll-dice-btn:hover {
+    background: #e68900;
+    transform: scale(1.1);
+}
+
+/* End Game Button */
+.lobby-container .end-game-btn {
+    background: #d32f2f;
+}
+
+.lobby-container .end-game-btn:hover {
+    background: #b71c1c;
+    transform: scale(1.1);
+}
+
+/* Scan QR Code Button */
+.lobby-container .scan-qr-btn {
+    background: #d5a00e;
+}
+
+.lobby-container .scan-qr-btn:hover {
+    background: #d44e0a;
+    transform: scale(1.1);
+}
+
+.lobby-container .view-logs-btn {
+    background: #4CAF50;
+}
+
+.lobby-container .view-logs-btn:hover {
+    background: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lobby-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .lobby-container .qr-code {
+        width: 150px;
+        height: 150px;
+    }
+
+    .lobby-container .btn {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .lobby-container .scan-qr-btn {
+        display: none;
+    }
+
+    .lobby-container .end-game-btn {
+        display: none;
+    }
+
+    .lobby-container h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+    
+    .lobby-container p {
+        font-size: 22px;
+        margin: 10px 0;
+    }
+    
+    /* Player Name Styling */
+    .lobby-container .player-name {
+        font-size: 20px;
+    }
+    
+    /* Game Status Text */
+    .lobby-container .game-status {
+        font-size: 18px;
+    }
+    
+}

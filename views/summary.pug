@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/summary.css")
+    .container
+        h2 Game Over
+        p The game has ended. Thanks for playing!
+
+        if summary && summary.players && summary.players.length > 0
+            h3 Leaderboard:
+            p.winner 🏆 Winner: #{summary.winner}
+            ul.players
+                each player, index in summary.players
+                    li #{index + 1}. #{player.Name} - $#{player.Balance}
+        else
+            p No players in this game.
+
+        a(href="/") 
+            button.btn Back to Main Menu

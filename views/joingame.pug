@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/join.css")
+    .lobby-container
+        h2 Game Lobby - Game ID: #{gameID}
+
+        h3 Players in the Lobby:
+        ul
+            each player in players
+                li #{player.Name}

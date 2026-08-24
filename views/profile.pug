@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/auth.css")
+    .auth-container
+        h1 Profile Management
+        form(action="/profile" method="post")
+            input(type="text" name="username" placeholder="Enter Username" value=user.Username required)
+            input(type="password" name="password" placeholder="Enter New Password" required)
+            p Your password must be between 4-10 characters long.
+            button(type="submit") Update Profile
+        a(href="/") Back to Home

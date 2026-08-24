@@ -1,0 +1,87 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/css/questions.css")
+    .container 
+        h2 Answer this question to proceed!
+        #property-info
+            p Loading property details...
+        .form-container
+            form(action="/submit-answer" method="POST")
+                label Select Your Name:
+                select(name="PlayerID" required)
+                    option(value="" disabled selected) -- Choose Player --
+                #question-area
+                    p Loading question...
+                input(type="hidden" name="propertyID")
+                input(type="hidden" name="questionID")
+                input(type="hidden" name="gameID")
+                br
+                .button-container
+                    button(type="submit") Submit Answer
+                    a(href="/ongoing-lobby", class="btn back-btn") 🔙 Back to Lobby
+    script.
+        var propertyID = new URLSearchParams(window.location.search).get("propertyID");
+
+        // Load Players
+        fetch('/get-players')
+            .then(response => response.json())
+            .then(players => {
+                console.log("Players received:", players); // Debugging log
+
+                let select = document.querySelector("select[name='PlayerID']");
+                if (!players || players.length === 0) {
+                    console.error("No players found.");
+                    return;
+                }
+
+                players.forEach(player => {
+                    let option = document.createElement("option");
+                    option.value = player.PlayerID;
+                    option.textContent = player.Name;
+                    select.appendChild(option);
+                });
+            })
+            .catch(error => console.error("Error fetching players:", error));
+
+        // Load Property Details
+        fetch('/get-property-details/' + propertyID)
+            .then(response => response.json())
+            .then(data => {
+                let propertyInfoHTML = `
+                    <p><strong>Property ID:</strong> ${propertyID}</p>
+                    <p><strong>Property Name:</strong> ${data?.Name || 'Unknown'}</p>
+                    <p><strong>Property Owned:</strong> ${data.OwnerID ? "Yes (Owned by Player ID: " + data.OwnerID + ")" : "No"}</p>
+                `;
+
+                document.querySelector("#property-info").innerHTML = propertyInfoHTML;
+                document.querySelector("input[name='propertyID']").value = propertyID;
+            })
+            .catch(error => {
+                document.querySelector("#property-info").innerHTML = "<p>Error loading property details.</p>";
+                console.error("Error fetching property details:", error);
+            });
+
+        // Load Question
+        fetch('/get-property-question/' + propertyID)
+            .then(response => response.json())
+            .then(data => {
+                if (!data.question) {
+                    document.querySelector("#question-area").innerHTML = "<p>Error loading question.</p>";
+                    return;
+                }
+
+                let questionHTML = `
+                    <p>${data.question.Questions}</p>
+                    <input type="hidden" name="questionID" value="${data.question.QuestionID}">
+                    <label><input type="radio" name="answer" value="1"> ${data.question.Option1}</label><br>
+                    <label><input type="radio" name="answer" value="2"> ${data.question.Option2}</label><br>
+                    <label><input type="radio" name="answer" value="3"> ${data.question.Option3}</label><br>
+                `;
+
+                document.querySelector("#question-area").innerHTML = questionHTML;
+            })
+            .catch(error => {
+                document.querySelector("#question-area").innerHTML = "<p>Error loading question.</p>";
+                console.error("Error fetching question:", error);
+            });
